@@ -1,4 +1,4 @@
-# Rakesh-s
+# rakesh-s
 Rakesh s
 CSE branch
 3rd sem
