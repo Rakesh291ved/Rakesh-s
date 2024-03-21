@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #302663, #24243e);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+p>audio,
+p>video,
+p>img {
+    max-width: 90%;
+    display: block;
+    margin: 10px auto;
+}
+
+.error {
+    color: red;
+}
+
+.button-container {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+}
+
+.button-container input[type="submit"],
+.button-container input[type="reset"] {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button-container input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-container input[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+#capture-container {
+    text-align: center; /* Center align the content */
+    margin-bottom: 20px; /* Add margin below the label */
+}
+#capture-label {
+    font-weight: bold; /* Make the text bold */
+    font-size: 18px; /* Increase the font size */
+    color: #fff; /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for emphasis */
+}
+#capture {
+    background-color: rgba(0, 128, 0, 0.8); /* Semi-transparent green background */
+    padding: 10px; /* Add padding for better appearance */
+    border-radius: 5px; /* Add rounded corners */
+    border: none; /* Remove default border */
+    width: 40%; /* Set width to match other elements */
+    margin: 0 auto; /* Center align */
+    display: block; /* Make it a block element */
+    text-align: center; /* Center align the text */
+    color: white; /* Text color */
+}
+
+
+

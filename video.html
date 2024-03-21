@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Recorder</title>
+<link rel="stylesheet" href="video.css">
+</head>
+<body>
+
+<div class="container">
+    <video id="video" width="480" height="360" autoplay></video>
+
+    <br>
+
+    <button id="startRecord">Start Recording</button>
+
+    <button id="stopRecord">Stop Recording</button>
+
+    <a id="downloadLink" download="video.mp4">Download Video</a>
+</div>
+
+<script>
+var video = document.querySelector('#video');
+var startRecord = document.querySelector('#startRecord');
+var stopRecord = document.querySelector('#stopRecord');
+var downloadLink = document.querySelector('#downloadLink');
+var videoStream;
+var mediaRecorder;
+var videoLocal;
+
+window.onload = async function () {
+    stopRecord.style.display = 'none';
+
+    try {
+    videoStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true
+    });
+    video.srcObject = videoStream;
+    } catch (err) {
+    console.error('Error accessing media devices:', err);
+    }
+};
+
+startRecord.onclick = function () {
+    startRecord.style.display = 'none';
+    stopRecord.style.display = 'inline';
+
+    mediaRecorder = new MediaRecorder(videoStream);
+    let blobs = [];
+
+    mediaRecorder.addEventListener('dataavailable', function (e) {
+    blobs.push(e.data);
+    });
+
+    mediaRecorder.addEventListener('stop', function () {
+    var blob = new Blob(blobs, { type: 'video/mp4' });
+    videoLocal = URL.createObjectURL(blob);
+    video.src = videoLocal; // Display recorded video on the page
+    downloadLink.href = videoLocal;
+    });
+
+    mediaRecorder.start();
+};
+
+stopRecord.onclick = function () {
+    mediaRecorder.stop();
+    startRecord.style.display = 'inline';
+    stopRecord.style.display = 'none';
+};
+</script>
+
+</body>
+</html>

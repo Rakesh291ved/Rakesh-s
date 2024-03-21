@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to bottom, #0f0c29, #302663, #24243e);
+    margin: 0;
+    padding: 0;
+}
+
+/* Center align all content */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center vertically */
+}
+
+/* Style for each list item */
+li {
+    font-size: 24px; /* Large font size */
+    margin-bottom: 20px; /* Add spacing between items */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    padding: 10px 20px; /* Add padding to make it more visible */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+
+/* Style for the links */
+a {
+    color: white;
+    text-decoration: none;
+}
+/* Style for the "Connect" headline */
+h1 {
+    /* background-color: #a728a7; */
+    background-image: linear-gradient(to bottom, #0f0c29, #513fac, #24243e); /* Green color */
+    color: white; /* Text color */
+    text-align: center; /* Center align text */
+    padding: 10px 200px; /* Add padding */
+    border-radius: 10px; /* Add rounded corners */
+    margin-bottom: 20px; /* Add space below the headline */
+}
+
+
+/* Style for the icons */
+i {
+    font-size: 24px; /* Large icon size */
+    margin-right: 10px;
+}
+
+/* On hover color change for links */
+a:hover {
+    color: #007bff; /* Blue color on hover */
+}

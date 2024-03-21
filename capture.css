@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #0f0c29, #302663, #24243e);
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.camera-option {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.camera-option a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: green;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.camera-option a:hover {
+    background-color: darkgreen;
+}
+.Upload-option {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Upload-option a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: green;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.Upload a:hover {
+    background-color: darkgreen;
+}
+.video-option {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.video-option a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: green;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.video-option a:hover {
+    background-color: darkgreen;
+}

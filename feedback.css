@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #0f0c29, #302663, #24243e);
+    color: #fff;
+}
+
+header {
+    background-color: #6a0dad;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+.feedback-form {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.feedback-form h1 {
+    font-size: 36px;
+}
+
+.feedback-form form {
+    margin-top: 20px;
+}
+
+.feedback-form form label {
+    display: block;
+    margin-bottom: 10px;
+}
+.feedback-form form input[type="submit"] {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 1px 2px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.feedback-form form input[type="text"],
+.feedback-form form input[type="email"],
+.feedback-form form textarea {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+
+footer {
+    background-color: #6a0dad;
+    padding: 20px;
+    text-align: center;
+}
+.feedback-form form input[type="submit"] {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Ensure proper button appearance */
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+.feedback-form form input[type="submit"]:hover {
+    background-color: #4b0082; /* Change color on hover */
+}

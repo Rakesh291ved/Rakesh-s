@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload from Gallery</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="upload.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        p>audio, p>video, p>img {
+            max-width: 90%;
+            display: block;
+            margin: 10px auto;
+        }
+        .error {
+            color: red;
+        }
+        /* Style for the button container */
+        .button-container {
+            text-align: center; /* Center align the buttons */
+            position: fixed; /* Fixed positioning */
+            bottom: 0; /* Align to the bottom of the viewport */
+            width: 100%; /* Take up full width */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            padding: 10px 0; /* Add some padding */
+        }
+        /* Style for the buttons */
+        .button-container input[type="submit"],
+        .button-container input[type="reset"] {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px; /* Add margin between buttons */
+        }
+        .button-container input[type="submit"] {
+            background-color: #007bff; /* Blue color */
+            color: white;
+        }
+        .button-container input[type="reset"] {
+            background-color: #dc3545; /* Red color */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Upload from Gallery</h1>
+    </header>
+    
+    </form>
+    
+    <main>
+        <!-- <form id="myform" enctype="multipart/form-data"> -->
+            <form id="myform" enctype="multipart/form-data">
+                <div id="capture-container">
+                    <label for="capture" id="capture-label">Capture Media</label>
+                    <!-- <input type="file" id="capture" accept="image/*,video/*,audio/*" capture multiple> -->
+                </div>
+                <br>
+            <!-- <label for="capture">Capture Media</label> -->
+            <!-- <label for="capture" id="capture-label">Capture Media</label> -->
+            <input type="file" id="capture" accept="image/*,video/*,audio/*" capture multiple>
+            <!-- <br> -->
+            <!-- <input type="submit" value="Process"> -->
+            <!-- <button type="button" onclick="clearMedia()">Clear Selection</button> -->
+        </form>
+        <p><img src="" id="img" alt="from phone"></p>
+        <p><audio src="" id="audio" controls></audio></p>
+        <p><video src="" id="video" controls></video></p>
+        <p id="error" class="error"></p>
+    </main>
+    <script>
+        function clearMedia() {
+            document.getElementById('img').src = "";
+            document.getElementById('audio').src = "";
+            document.getElementById('video').src = "";
+            document.getElementById('capture').value = "";
+            document.getElementById('error').textContent = "";
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('myform');
+            const input = document.getElementById('capture');
+
+            input.addEventListener('change', () => {
+                const file = input.files[0];
+                if (!file) return;
+
+                if (file.type.includes("image/")) {
+                    document.getElementById('img').src = window.URL.createObjectURL(file);
+                } else if (file.type.includes("audio/")) {
+                    document.getElementById('audio').src = window.URL.createObjectURL(file);
+                } else if (file.type.includes("video/")) {
+                    document.getElementById('video').src = window.URL.createObjectURL(file);
+                } else {
+                    document.getElementById('error').textContent = "Unsupported file type!";
+                }
+            });
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                // Process uploaded files if needed
+                // Add your processing logic here
+            });
+        });
+    </script>
+    <div class="button-container">
+        <input type="submit" value="Process">
+        <input type="reset" value="Clear Selection">
+        
+    </div>
+    
+</body>
+</html>
